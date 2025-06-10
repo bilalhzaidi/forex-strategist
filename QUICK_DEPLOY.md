@@ -40,7 +40,7 @@ nslookup forextrade.litigataxcounsel.com
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/yourusername/forex-strategist.git
+git clone https://github.com/bilalhzaidi/forex-strategist.git
 cd forex-strategist
 
 # 2. Make scripts executable

@@ -108,7 +108,7 @@ if [ -d "$PROJECT_DIR" ]; then
     fi
 else
     echo -e "${YELLOW}📥 Cloning repository...${NC}"
-    sudo git clone https://github.com/yourusername/forex-strategist.git $PROJECT_DIR
+    sudo git clone https://github.com/bilalhzaidi/forex-strategist.git $PROJECT_DIR
     cd $PROJECT_DIR
 fi
 
