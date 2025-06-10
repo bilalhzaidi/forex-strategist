@@ -53,9 +53,7 @@ RUN mkdir -p /app/data /var/log/forex-strategist && \
 
 # Copy application code
 COPY backend/app ./app
-COPY backend/alembic ./alembic
-COPY backend/alembic.ini .
-COPY .env.production .env
+COPY run_backend.py ./
 
 # Switch to app user
 USER app
@@ -67,11 +65,5 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
 # Expose port
 EXPOSE 8000
 
-# Run with gunicorn for production
-CMD ["gunicorn", "app.main:app", \
-     "--bind", "0.0.0.0:8000", \
-     "--workers", "4", \
-     "--worker-class", "uvicorn.workers.UvicornWorker", \
-     "--access-logfile", "/var/log/forex-strategist/access.log", \
-     "--error-logfile", "/var/log/forex-strategist/error.log", \
-     "--log-level", "info"]
+# Run the application
+CMD ["python", "run_backend.py"]
