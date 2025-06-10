@@ -28,7 +28,7 @@ alembic==1.13.1
 
 # Caching
 redis==5.0.1
-aioredis==2.0.1
+redis[hiredis]==5.0.1
 
 # Rate limiting
 slowapi==0.1.9

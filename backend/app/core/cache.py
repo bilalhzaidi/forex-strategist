@@ -1,7 +1,7 @@
 import json
 import hashlib
 from typing import Optional, Any, Dict
-import aioredis
+import redis.asyncio as redis
 from .config import settings
 from .logging import get_logger
 
@@ -11,7 +11,7 @@ class CacheManager:
     """Redis-based caching with fallback to memory"""
     
     def __init__(self):
-        self.redis_client: Optional[aioredis.Redis] = None
+        self.redis_client: Optional[redis.Redis] = None
         self.memory_cache: Dict[str, Any] = {}
         self.is_connected = False
     
@@ -19,7 +19,7 @@ class CacheManager:
         """Connect to Redis if available"""
         if settings.REDIS_URL:
             try:
-                self.redis_client = aioredis.from_url(
+                self.redis_client = redis.from_url(
                     settings.REDIS_URL,
                     encoding="utf-8",
                     decode_responses=True,
