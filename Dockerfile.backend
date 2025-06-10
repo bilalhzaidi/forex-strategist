@@ -53,7 +53,6 @@ RUN mkdir -p /app/data /var/log/forex-strategist && \
 
 # Copy application code
 COPY backend/app ./app
-COPY run_backend.py ./
 
 # Switch to app user
 USER app
@@ -65,5 +64,5 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
 # Expose port
 EXPOSE 8000
 
-# Run the application
-CMD ["python", "run_backend.py"]
+# Run the application directly with uvicorn
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
