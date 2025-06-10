@@ -1,0 +1,45 @@
+# Production Requirements
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+gunicorn==21.2.0
+pydantic==2.5.0
+sqlalchemy==2.0.23
+pydantic-settings==2.1.0
+requests==2.31.0
+python-dotenv==1.0.0
+pandas==2.1.4
+numpy==1.25.2
+textblob==0.17.1
+newsapi-python==0.2.7
+python-multipart==0.0.6
+httpx==0.25.2
+aiohttp==3.9.1
+beautifulsoup4==4.12.2
+lxml==4.9.3
+feedparser==6.0.10
+
+# Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Database (PostgreSQL for production)
+psycopg2-binary==2.9.9
+alembic==1.13.1
+
+# Caching
+redis==5.0.1
+aioredis==2.0.1
+
+# Rate limiting
+slowapi==0.1.9
+
+# Monitoring and logging
+sentry-sdk[fastapi]==1.40.0
+structlog==23.2.0
+python-json-logger==2.0.7
+
+# Performance
+orjson==3.9.12
+
+# Health checks
+httptools==0.6.1
